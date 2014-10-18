@@ -36,7 +36,7 @@ RUN	apt-get clean && rm -rf /tmp/* /var/tmp/* && rm -rf /var/lib/apt/lists/* && 
 ADD	./start /start
 RUN	chmod u+x  /start
 ADD	./supervisor/supervisord.conf /etc/supervisor/supervisord.conf
-ADD	./supervisor/conf.d/sickbeard.conf /etc/supervisor/conf.d/sabnzbd.conf
+ADD	./supervisor/conf.d/sabnzbd.conf /etc/supervisor/conf.d/sabnzbd.conf
 
 # Fix all permissions
 RUN	chmod +x /start; chown -R downloads:downloads /media /data

@@ -1,6 +1,6 @@
 #! /bin/sh
 
-chown -R downloads:downloads /data /config
+chown -R downloads:downloads /data /media
 
 # Run supervisor
 /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
