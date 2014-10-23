@@ -17,12 +17,12 @@ RUN	apt-get -q update
 RUN	apt-get install -qy --force-yes git supervisor wget tar ca-certificates curl sabnzbdplus sabnzbdplus-theme-classic sabnzbdplus-theme-mobile sabnzbdplus-theme-plush par2 python-yenc unzip unrar
 #RUN	cd /opt && git clone https://github.com/??? sabnzbd
 
-#Volume for Sabnzbd data
+# Volume for Sabnzbd data
 VOLUME	/data
-#Volume for media folders
+# Volume for media folders
 VOLUME	/media
 
-#Expose Sabnzbd port
+# Expose Sabnzbd port
 EXPOSE	8080
 
 # Configure a localshop user
@@ -39,7 +39,7 @@ ADD	./supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 ADD	./supervisor/conf.d/sabnzbd.conf /etc/supervisor/conf.d/sabnzbd.conf
 
 # Fix all permissions
-RUN	chmod +x /start; chown -R downloads:downloads /media /data
+RUN	chmod +x /start; mkdir -p /data/sabnzbd ; chown -R downloads:downloads /media /data
 
 # Execute start.sh whatever CMD is given
 ENTRYPOINT	["/start"]

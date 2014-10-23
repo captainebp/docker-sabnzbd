@@ -6,10 +6,10 @@ This is a Dockerfile to set up "SabNZBd" - ()
 Build from docker file
 
 ```
-git clone https://github.com/captainebp/docker-sabnzbd.git
-cd docker-sabnzbd
-docker build -t sabnzbd .
+docker build -t captnbp/sabnzbd git://github.com/captnbp/docker-sabnzbd.git
 ```
 
-docker run -d -v /*sabnzbd_data_location*:/config  -v /*your_videos_location*:/data -p 8080:8080 sabnzbd
-
+Then run it :
+```
+docker run -d -v /*sabnzbd_data_location*:/config  -v /*your_videos_location*:/data -p 8080:8080 captnbp/sabnzbd
+```
